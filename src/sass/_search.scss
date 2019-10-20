@@ -1,0 +1,27 @@
+.search {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.search__header--big {
+  font-size: 1.7rem;
+  font-weight: bold;
+  @media (min-width: 500px) {
+    font-size: 2rem;
+  }
+}
+.search__header--small {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.search__input {
+  width: 80%;
+  height: 25px;
+  padding: 0 5px;
+  margin: 10px 0;
+  box-shadow: $box-shadow;
+  border: none;
+}

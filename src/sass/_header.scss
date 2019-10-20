@@ -1,0 +1,15 @@
+.header {
+  background: $primary-color;
+  width: 100%;
+}
+.header__logo {
+  font-size: 1.5rem;
+  color: White;
+  padding: $main_padding;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 10px;
+}

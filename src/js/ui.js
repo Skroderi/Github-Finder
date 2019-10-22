@@ -5,6 +5,8 @@ export class Ui {
   }
 
   showUser(userData) {
+    const data = userData.created_at.split("T")[0];
+
     this.resultWrapper.innerHTML = `<div class="user">
     <div class="user__avatar">
       <img src="${
@@ -30,7 +32,7 @@ export class Ui {
           <li class="user__info-item">Location: ${
             userData.location === null ? "none" : userData.location
           }</li>
-          <li class="user__info-item">Member Since: ${userData.created_at}</li>
+          <li class="user__info-item">Member Since: ${data}</li>
         </ul>
       </div>
     </div>

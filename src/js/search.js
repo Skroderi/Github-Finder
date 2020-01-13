@@ -1,5 +1,7 @@
-import { Github } from "./github";
+// import Github from "./github";
 import { Ui } from "./ui";
+const Github = require("./github").default;
+// const Github = require("./Github");
 
 export class SearchUser {
   constructor() {
@@ -10,16 +12,17 @@ export class SearchUser {
   }
 
   async startSearch() {
-    let user = this.searchInput.value;
-    if (user != "") {
-      const userData = await this.github.getUser(user);
-      if (userData.profileData.message === "Not Found") {
+    let profile = this.searchInput.value;
+    if (profile != "") {
+      const profileData = await this.github.getProfileData(user);
+      const profileRepos = await this.github.getProfileRepos(user);
+      if (!profileData) {
         this.ui.showAlert("Profile not found :(", "alert alert--danger");
         this.ui.resultWrapper.innerHTML = "";
       } else {
         this.ui.clearAlert();
-        this.ui.showUser(userData.profileData);
-        this.ui.showRepos(userData.profileRepos);
+        this.ui.showUser(profileData);
+        this.ui.showRepos(profileRepos);
       }
     } else {
       this.ui.resultWrapper.innerHTML = "";
